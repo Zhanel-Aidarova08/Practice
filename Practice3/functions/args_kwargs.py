@@ -1,0 +1,63 @@
+def my_function(*kids):
+  print("The youngest child is " + kids[2])
+
+my_function("Emil", "Tobias", "Linus")
+# The youngest child is Linus
+
+
+
+
+def my_function(*args):
+  print("Type:", type(args))
+  print("First argument:", args[0])
+  print("Second argument:", args[1])
+  print("All arguments:", args)
+
+my_function("Emil", "Tobias", "Linus")
+# Type: <class 'tuple'>
+# First argument: Emil
+# Second argument: Tobias
+# All arguments: ('Emil', 'Tobias', 'Linus')
+
+
+
+
+def my_function(greeting, *names):
+  for name in names:
+    print(greeting, name)
+
+my_function("Hello", "Emil", "Tobias", "Linus")
+# Hello Emil
+# Hello Tobias
+# Hello Linus
+
+
+
+
+def my_function(*numbers):
+  total = 0
+  for num in numbers:
+    total += num
+  return total
+
+print(my_function(1, 2, 3))
+print(my_function(10, 20, 30, 40))
+print(my_function(5))
+# 6
+# 100
+# 5
+
+
+
+
+def my_function(*numbers):
+  if len(numbers) == 0:
+    return None
+  max_num = numbers[0]
+  for num in numbers:
+    if num > max_num:
+      max_num = num
+  return max_num
+
+print(my_function(3, 7, 2, 9, 1))
+# 9
